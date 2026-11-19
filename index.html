@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Người Thắp Sáng | 20.11</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+</body>
+    <!-- Dấu ấn cá nhân Kazin -->
+    <div class="kazin-signature">
+        <img src="anh/kiq.jpg" alt="KID Quỳnh">
+        <span>KID Quỳnh</span>
+    </div>
+</html>
+<body>
+
+<header class="topbar">
+    <a href="#" class="brand" data-page="home">
+        <span>✿</span>
+        <div>
+            GỬI NGƯỜI THẮP SÁNG
+            <small>MÙA TRI ÂN · 20.11</small>
+        </div>
+    </a>
+
+    <nav>
+        <button data-page="home">Trang chủ</button>
+        <button data-page="teachers">Gửi lời chúc</button>
+        <button data-page="teacher-view">Góc giáo viên</button>
+    </nav>
+
+    <button class="admin-entry" data-page="admin">ADMIN ↗</button>
+</header>
+
+<main>
+
+    <!-- TRANG CHỦ -->
+    <section id="page-home" class="page active">
+        <div class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">20 THÁNG 11 · NGÀY NHÀ GIÁO VIỆT NAM</p>
+
+                <h1>
+                    Một lời cảm ơn,<br>
+                    <em>ngàn điều thương mến.</em>
+                </h1>
+
+                <p class="description">
+                    Có những bài học không nằm trên trang giấy.
+                    Có những người thầy, người cô lặng lẽ gieo mầm
+                    tri thức và chắp cánh cho những ước mơ.
+                </p>
+
+                <button class="primary-btn" data-page="teachers">
+                    Gửi lời tri ân ↗
+                </button>
+            </div>
+
+            <div class="hero-image">
+                <img src="assets/images/hero.jpg" alt="Hoa tri ân">
+            </div>
+        </div>
+
+        <div class="signature">
+            A LITTLE PROJECT MADE WITH ♥ · KAZIN
+        </div>
+    </section>
+
+
+    <!-- CHỌN GIÁO VIÊN -->
+    <section id="page-teachers" class="page">
+        <div class="section-heading">
+            <p class="eyebrow">GỬI ĐẾN NGƯỜI BẠN MUỐN CẢM ƠN</p>
+            <h1>Chọn một <em>người thầy.</em></h1>
+            <p>Hãy chọn thầy cô mà bạn muốn gửi lời tri ân nhé.</p>
+        </div>
+
+        <div id="teacher-grid" class="teacher-grid"></div>
+    </section>
+
+
+    <!-- VIẾT LỜI CHÚC -->
+    <section id="page-compose" class="page">
+        <button class="back-button" data-page="teachers">
+            ← Quay lại
+        </button>
+
+        <div class="compose-layout">
+            <div>
+                <p class="eyebrow">MỘT ĐIỀU MUỐN NÓI</p>
+
+                <h1>
+                    Gửi thầy cô<br>
+                    <em>đôi lời thương mến.</em>
+                </h1>
+
+                <div class="recipient-card">
+                    <img id="compose-avatar"
+                         src="assets/images/teacher.jpg"
+                         alt="Giáo viên">
+
+                    <div>
+                        <small>LỜI CHÚC ĐƯỢC GỬI ĐẾN</small>
+                        <strong id="compose-recipient">Thầy/Cô</strong>
+                        <span>Nhân ngày Nhà giáo Việt Nam 20/11</span>
+                    </div>
+                </div>
+            </div>
+
+            <form id="wish-form">
+                <label for="sender">Tên của bạn</label>
+                <input id="sender"
+                       type="text"
+                       placeholder="Tên người gửi"
+                       maxlength="50"
+                       required>
+
+                <label for="wish">Lời chúc của bạn</label>
+                <textarea id="wish"
+                          rows="7"
+                          maxlength="700"
+                          placeholder="Viết lời chúc tại đây..."
+                          required></textarea>
+
+                <div class="form-foot">
+                    <span id="char-count">0 / 700</span>
+                    <button class="primary-btn" type="submit">
+                        Gửi lời chúc ↗
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- GỬI THÀNH CÔNG -->
+    <section id="page-success" class="page">
+        <div class="success-card">
+            <div class="flower">✿</div>
+
+            <p class="eyebrow">MỘT ĐIỀU TỬ TẾ ĐÃ ĐƯỢC GỬI ĐI</p>
+
+            <h1>
+                Lời chúc đã<br>
+                <em>được gửi đi!</em>
+            </h1>
+
+            <p>
+                Cảm ơn bạn đã góp thêm một bông hoa
+                vào mùa tri ân năm nay.
+            </p>
+
+            <button class="primary-btn" data-page="teachers">
+                Gửi lời chúc khác ↗
+            </button>
+
+            <button class="back-button" data-page="home">
+                Về trang chủ
+            </button>
+        </div>
+    </section>
+
+
+    <!-- GIAO DIỆN GIÁO VIÊN -->
+    <section id="page-teacher-view" class="page">
+        <div class="section-heading">
+            <p class="eyebrow">NHỮNG ĐIỀU DỄ THƯƠNG ĐƯỢC GỬI ĐẾN</p>
+            <h1>Góc nhỏ <em>của thầy cô.</em></h1>
+            <p>Chọn tên để xem những lời chúc dành riêng cho mình.</p>
+        </div>
+
+        <div class="teacher-view-controls">
+            <label for="teacher-filter">Chọn giáo viên</label>
+            <select id="teacher-filter"></select>
+        </div>
+
+        <div id="wish-list" class="wish-list"></div>
+    </section>
+
+
+    <!-- ADMIN -->
+    <section id="page-admin" class="page">
+        <div id="admin-login" class="admin-login">
+            <div class="login-panel">
+                <div class="admin-symbol">✳</div>
+
+                <p class="eyebrow">KHU VỰC QUẢN TRỊ</p>
+
+                <h1>Welcome <em>back.</em></h1>
+
+                <p>Đăng nhập để quản lý không gian tri ân.</p>
+
+                <form id="login-form">
+                    <label for="admin-password">
+                        Mật khẩu quản trị
+                    </label>
+
+                    <input id="admin-password"
+                           type="password"
+                           placeholder="Nhập mật khẩu"
+                           required>
+
+                    <button class="dark-btn" type="submit">
+                        Đăng nhập ↗
+                    </button>
+
+                    <small></small>
+                    <p id="login-error"></p>
+                </form>
+            </div>
+        </div>
+
+        <div id="admin-dashboard" class="dashboard hidden">
+            <aside class="admin-sidebar">
+                <div class="admin-logo">
+                    ✳ STUDIO 20.11
+                </div>
+
+                <p>WORKSPACE</p>
+
+                <button data-admin-tab="overview">
+                    ▦ Tổng quan
+                </button>
+
+                <button data-admin-tab="teachers">
+                    ♙ Giáo viên
+                </button>
+
+                <button data-admin-tab="wishes">
+                    ♡ Lời chúc
+                </button>
+
+                <button id="logout-btn">
+                    ↪ Đăng xuất
+                </button>
+            </aside>
+
+            <div class="admin-main">
+                <div class="admin-top">
+                    <p>CONTROL CENTER / 20.11</p>
+                    <h1 id="admin-title">Tổng quan</h1>
+                </div>
+
+                <div id="admin-content"></div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
