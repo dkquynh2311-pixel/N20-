@@ -1,0 +1,1058 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+    --cream: #f5f0e6;
+    --paper: #fbf8f1;
+    --ink: #30271f;
+    --brown: #76553d;
+    --muted: #8c8174;
+    --line: #dfd5c6;
+    --sage: #8c9275;
+
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+}
+
+button, input, textarea, select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.site-shell {
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 6.2%;
+}
+
+/* ================= HEADER ================= */
+
+.topbar {
+    min-height: 94px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+}
+
+.brand > span {
+    font-size: 30px;
+    color: var(--brown);
+}
+
+.brand small {
+    display: block;
+    font-size: 8px;
+    color: var(--muted);
+    letter-spacing: 2.5px;
+    margin-top: 5px;
+}
+
+nav {
+    display: flex;
+    gap: 34px;
+}
+
+nav button,
+.admin-entry {
+    border: none;
+    background: none;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+nav button:hover {
+    color: var(--brown);
+}
+
+.admin-entry {
+    border: 1px solid var(--line);
+    padding: 11px 16px;
+    color: var(--brown);
+    letter-spacing: 1px;
+    font-size: 10px;
+}
+
+.admin-entry:hover {
+    background: var(--brown);
+    color: white;
+}
+
+/* ================= PAGE ================= */
+
+
+.page {
+    display: none;
+    min-height: calc(100vh - 95px);
+    position: relative;
+    padding: 55px 0 85px;
+}
+
+.page.active {
+    display: block;
+    animation: appear .3s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ================= TEXT ================= */
+
+.eyebrow {
+    font-size: 9px;
+    letter-spacing: 2.2px;
+    color: var(--brown);
+    font-weight: 700;
+}
+
+h1, h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+}
+
+h1 em, h2 em {
+    color: var(--brown);
+    font-weight: 400;
+}
+
+.description {
+    max-width: 470px;
+    color: #756b60;
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+/* ================= HOME ================= */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: center;
+    min-height: 550px;
+    gap: 6%;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.13;
+    letter-spacing: -1.7px;
+    margin: 23px 0;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 33px;
+}
+
+.primary-btn {
+    background: var(--brown);
+    color: white;
+    border: 0;
+    padding: 16px 22px;
+    font-size: 11px;
+    letter-spacing: .5px;
+    box-shadow: 4px 4px 0 #d8caba;
+}
+
+.primary-btn:hover {
+    background: #533b2b;
+    transform: translateY(-3px);
+    box-shadow: 4px 7px 0 #d8caba;
+}
+
+.hero-image {
+    height: 430px;
+    background: #e8dfd0;
+    padding: 13px;
+    transform: rotate(2deg);
+    box-shadow: 0 20px 50px #66513a1c;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.signature {
+    position: absolute;
+    bottom: 22px;
+    left: 0;
+    font-size: 8px;
+    letter-spacing: 1.7px;
+    color: #a3988b;
+}
+
+.signature span {
+    color: #9d6b56;
+}
+
+/* ================= TEACHERS ================= */
+
+.section-heading {
+    text-align: center;
+    margin: 20px auto 40px;
+}
+
+.section-heading h1 {
+    font-size: 52px;
+    margin: 15px;
+}
+
+.section-heading > p:last-child {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.teacher-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.teacher-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 14px;
+    text-align: left;
+    transition: .25s;
+}
+
+.teacher-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px #45321c12;
+}
+
+.teacher-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: #e8dfd0;
+}
+
+.teacher-meta {
+    padding: 15px 5px 7px;
+}
+
+.teacher-meta small {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: #9a8d7e;
+}
+
+.teacher-meta strong {
+    display: block;
+    font: 500 22px var(--serif);
+    margin: 7px 0;
+}
+
+.teacher-meta span {
+    font-size: 10px;
+    color: var(--muted);
+}
+
+/* ================= COMPOSE ================= */
+
+.back-button {
+    border: none;
+    background: none;
+    color: var(--brown);
+    margin-bottom: 25px;
+    font-size: 12px;
+}
+
+.back-button:hover {
+    transform: translateX(-4px);
+}
+
+.compose-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9%;
+    align-items: center;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.compose-layout h1 {
+    font-size: 52px;
+    margin: 20px 0;
+}
+
+.recipient-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 45px;
+    padding: 14px;
+    background: #eee7da;
+    max-width: 360px;
+}
+
+.recipient-card img {
+    width: 65px;
+    height: 72px;
+    object-fit: cover;
+}
+
+.recipient-card small {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: #9a8d7e;
+}
+
+.recipient-card strong {
+    display: block;
+    font: 500 19px var(--serif);
+    margin: 5px 0;
+}
+
+.recipient-card span {
+    font-size: 9px;
+    color: var(--muted);
+}
+
+/* FORM */
+
+#wish-form {
+    background: var(--paper);
+    padding: 30px;
+    border: 1px solid var(--line);
+}
+
+#wish-form label {
+    display: block;
+    font-size: 10px;
+    color: var(--brown);
+    margin-bottom: 9px;
+}
+
+#wish-form input,
+#wish-form textarea {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--line);
+    padding: 13px;
+    margin-bottom: 22px;
+    outline: none;
+    color: var(--ink);
+    font-size: 12px;
+}
+
+#wish-form input:focus,
+#wish-form textarea:focus {
+    border-color: var(--brown);
+}
+
+#wish-form textarea {
+    resize: vertical;
+    line-height: 1.7;
+}
+
+.form-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-foot span {
+    font-size: 9px;
+    color: #a3988b;
+}
+
+/* ================= SUCCESS ================= */
+
+.success-card {
+    text-align: center;
+    max-width: 500px;
+    margin: 55px auto;
+}
+
+.success-card h1 {
+    font-size: 58px;
+    margin: 20px 0;
+}
+
+.success-card > p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 25px;
+}
+
+.flower {
+    font-size: 50px;
+    color: var(--sage);
+}
+
+/* ================= TEACHER VIEW ================= */
+
+.teacher-view-controls {
+    max-width: 420px;
+    margin: 0 auto 25px;
+}
+
+.teacher-view-controls label {
+    display: block;
+    font-size: 10px;
+    margin-bottom: 9px;
+    color: var(--brown);
+}
+
+.teacher-view-controls select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+}
+
+.wish-list {
+    max-width: 800px;
+    margin: auto;
+    display: grid;
+    gap: 14px;
+}
+
+.wish-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 24px 28px;
+}
+
+.wish-card blockquote {
+    font: italic 18px/1.7 var(--serif);
+    margin-bottom: 16px;
+    color: #544437;
+}
+
+.wish-card footer {
+    font-size: 10px;
+    color: var(--muted);
+}
+
+/* ================= ADMIN LOGIN ================= */
+
+.admin-login {
+    min-height: 590px;
+    display: grid;
+    place-items: center;
+}
+
+.login-panel {
+    width: min(100%, 390px);
+    background: #252a2a;
+    color: #f5f0e6;
+    padding: 40px;
+    box-shadow: 12px 12px 0 #d9cebd;
+}
+
+.admin-symbol {
+    font-size: 35px;
+    color: #c4ad8c;
+}
+
+.login-panel h1 {
+    font-size: 43px;
+    margin: 15px 0;
+}
+
+.login-panel h1 em {
+    color: #c4ad8c;
+}
+
+.login-panel p {
+    font-size: 11px;
+    color: #bcb9ae;
+    margin-bottom: 20px;
+}
+
+.login-panel label {
+    display: block;
+    color: #c4ad8c;
+    font-size: 10px;
+    margin-bottom: 9px;
+}
+
+.login-panel input {
+    width: 100%;
+    padding: 13px;
+    background: transparent;
+    border: 1px solid #59605b;
+    color: white;
+    margin-bottom: 18px;
+}
+
+.dark-btn {
+    width: 100%;
+    background: #c4ad8c;
+    border: none;
+    padding: 14px;
+    color: #252a2a;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.login-panel small {
+    display: block;
+    margin-top: 15px;
+    color: #a9aaa1;
+    font-size: 9px;
+}
+
+/* ================= ADMIN DASHBOARD ================= */
+
+.hidden {
+    display: none !important;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    min-height: 590px;
+    background: #f9f6ef;
+    border: 1px solid #d9d1c3;
+    margin: 10px 0 40px;
+}
+
+.admin-sidebar {
+    background: #242b2b;
+    color: #eae6db;
+    padding: 25px 17px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-logo {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #c4ad8c;
+    margin-bottom: 40px;
+}
+
+.admin-sidebar > p {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #858d84;
+    margin: 10px;
+}
+
+.admin-sidebar button {
+    background: none;
+    border: none;
+    color: #b9bdb3;
+    text-align: left;
+    padding: 12px 10px;
+    font-size: 11px;
+}
+
+.admin-sidebar button:hover {
+    background: #3a4240;
+    color: #e2cba8;
+}
+
+.admin-main {
+    padding: 35px 4%;
+}
+
+.admin-top {
+    border-bottom: 1px solid #e3dbcf;
+    padding-bottom: 22px;
+}
+
+.admin-top p {
+    font-size: 9px;
+    color: var(--brown);
+    letter-spacing: 2px;
+}
+
+.admin-top h1 {
+    font: 500 35px var(--serif);
+    margin-top: 7px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 800px) {
+    .site-shell {
+        padding: 0 5%;
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+        padding: 15px 0;
+        gap: 15px;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 35px 0;
+    }
+
+    .hero-image {
+        height: 330px;
+    }
+
+    .teacher-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .compose-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .admin-main {
+        padding: 22px 4%;
+    }
+}
+
+@media (max-width: 480px) {
+    .teacher-grid {
+        gap: 9px;
+    }
+
+    .teacher-card {
+        padding: 8px;
+    }
+
+    .teacher-card img {
+        height: 135px;
+    }
+
+    .teacher-meta strong {
+        font-size: 17px;
+    }
+
+    .section-heading h1,
+    .compose-layout h1 {
+        font-size: 40px;
+    }
+
+    #wish-form {
+        padding: 20px;
+    }
+}
+.teacher-card {
+    min-height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+}
+
+.teacher-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    color: #4b382b;
+}
+
+.teacher-card img {
+    display: none !important;
+}
+
+/* ==========================================
+   KAZIN CONTROL CENTER — DARK LUXURY
+========================================== */
+
+#page-admin {
+    --admin-bg: #111210;
+    --admin-panel: #1b1c19;
+    --admin-card: #22231f;
+    --admin-gold: #c6a16e;
+    --admin-light: #eee7dc;
+    --admin-muted: #969187;
+
+    background: var(--admin-bg);
+    color: var(--admin-light);
+    padding: 0;
+    min-height: 100vh;
+    font-family: "DM Sans", sans-serif;
+    overflow: hidden;
+}
+
+#page-admin * {
+    box-sizing: border-box;
+}
+
+/* LOGIN */
+
+#page-admin .admin-login {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    background:
+        radial-gradient(circle at 50% 45%,
+        rgba(198,161,110,.12), transparent 35%),
+        #111210;
+}
+
+#page-admin .login-panel {
+    width: 100%;
+    max-width: 440px;
+    padding: 48px 42px;
+    background: rgba(31,32,28,.94);
+    border: 1px solid #49402f;
+    border-radius: 16px;
+    box-shadow: 0 25px 90px rgba(0,0,0,.4);
+}
+
+#page-admin .admin-symbol {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--admin-gold);
+    border-radius: 50%;
+    color: var(--admin-gold);
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+#page-admin .eyebrow,
+#page-admin .admin-top > p {
+    color: var(--admin-gold);
+    letter-spacing: 4px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+#page-admin .login-panel h1 {
+    color: var(--admin-light);
+    font-family: "Playfair Display", serif;
+    font-size: 43px;
+    margin: 15px 0;
+}
+
+#page-admin .login-panel h1 em {
+    color: var(--admin-gold);
+    font-weight: 400;
+}
+
+#page-admin .login-panel > p:not(.eyebrow) {
+    color: var(--admin-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+#page-admin #login-form {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#page-admin #login-form label {
+    color: #d9cbb8;
+    font-size: 13px;
+}
+
+#page-admin #admin-password {
+    width: 100%;
+    padding: 15px;
+    background: #141512;
+    border: 1px solid #484236;
+    border-radius: 7px;
+    color: white;
+    outline: none;
+}
+
+#page-admin #admin-password:focus {
+    border-color: var(--admin-gold);
+}
+
+#page-admin .dark-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--admin-gold);
+    color: #171613;
+    border: none;
+    border-radius: 7px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s;
+}
+
+#page-admin .dark-btn:hover {
+    background: #dfbd8e;
+    transform: translateY(-2px);
+}
+
+#page-admin #login-form small {
+    color: #77736b;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* DASHBOARD LAYOUT */
+
+#page-admin .dashboard {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    min-height: 85vh;
+    background: var(--admin-bg);
+}
+
+#page-admin .dashboard.hidden {
+    display: none;
+}
+
+/* SIDEBAR */
+
+#page-admin .admin-sidebar {
+    background: #181916;
+    border-right: 1px solid #333127;
+    padding: 35px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#page-admin .admin-logo {
+    color: var(--admin-gold);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 8px 5px 35px;
+    border-bottom: 1px solid #39362d;
+    margin-bottom: 22px;
+}
+
+#page-admin .admin-sidebar > p {
+    color: #77746a;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin: 0 0 12px 10px;
+}
+
+#page-admin .admin-sidebar button {
+    width: 100%;
+    padding: 14px 15px;
+    text-align: left;
+    background: transparent;
+    color: #aaa69c;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: .25s;
+    font-size: 14px;
+}
+
+#page-admin .admin-sidebar button:hover,
+#page-admin .admin-sidebar button.active {
+    background: rgba(198,161,110,.12);
+    border-color: rgba(198,161,110,.25);
+    color: var(--admin-gold);
+}
+
+#page-admin #logout-btn {
+    margin-top: auto;
+    color: #c58c80;
+}
+
+/* MAIN */
+
+#page-admin .admin-main {
+    min-width: 0;
+    padding: 40px clamp(20px, 5vw, 65px);
+}
+
+#page-admin .admin-top {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #39362d;
+    margin-bottom: 35px;
+}
+
+#page-admin .admin-top h1 {
+    color: var(--admin-light);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 500;
+    margin: 12px 0 0;
+}
+
+/* CONTENT */
+
+#page-admin #admin-content {
+    color: var(--admin-light);
+}
+
+#page-admin #admin-content h2 {
+    color: var(--admin-gold);
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    margin: 25px 0 18px;
+}
+
+#page-admin #admin-content h3 {
+    color: var(--admin-light);
+    font-size: 17px;
+}
+
+#page-admin #admin-content p {
+    color: var(--admin-muted);
+    line-height: 1.7;
+}
+
+#page-admin #admin-content input,
+#page-admin #admin-content select,
+#page-admin #admin-content textarea {
+    background: #171814;
+    border: 1px solid #494334;
+    border-radius: 7px;
+    padding: 13px;
+    color: var(--admin-light);
+    outline: none;
+    margin: 5px;
+    max-width: 100%;
+}
+
+#page-admin #admin-content input:focus,
+#page-admin #admin-content textarea:focus {
+    border-color: var(--admin-gold);
+}
+
+#page-admin #admin-content button {
+    padding: 11px 17px;
+    background: var(--admin-gold);
+    color: #171613;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#page-admin #admin-content button:hover {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+}
+
+#page-admin #admin-content .admin-card,
+#page-admin #admin-content .admin-section,
+#page-admin #admin-content .teacher-admin-item,
+#page-admin #admin-content .teacher-row {
+    background: var(--admin-card);
+    border: 1px solid #39372f;
+    border-radius: 12px;
+    padding: 22px;
+    margin: 15px 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 750px) {
+    #page-admin .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    #page-admin .admin-sidebar {
+        padding: 18px;
+        border-right: none;
+        border-bottom: 1px solid #39362d;
+    }
+
+    #page-admin .admin-logo {
+        padding-bottom: 15px;
+        margin-bottom: 10px;
+    }
+
+    #page-admin .admin-sidebar button {
+        width: auto;
+        display: inline-block;
+        margin: 3px;
+    }
+
+    #page-admin .admin-main {
+        padding: 25px 18px;
+    }
+
+    #page-admin .login-panel {
+        padding: 35px 24px;
+    }
+}
+/* Dấu ấn cá nhân Kazin */
+.kazin-signature {
+    position: fixed;
+    right: 22px;
+    bottom: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px 6px 6px;
+    background: rgba(248, 241, 229, 0.92);
+    border: 1px solid #b8956c;
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(60, 40, 25, 0.15);
+}
+
+.kazin-signature img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #b8956c;
+}
+
+.kazin-signature span {
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #604832;
+}
